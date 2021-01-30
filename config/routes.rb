@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   	resources:likes,only: [:create]
   end
   get '/my_friends', to: 'users#myfriends'
+  get 'users/:id/friendrequest', to:'friendships#friendrequest',as: 'user_friendrequests'
+  post 'users/:id/friendrequest', to:'friendships#accept'
 end

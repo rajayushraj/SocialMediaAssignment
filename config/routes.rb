@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   	resources:comments,only: [:new,:create,:show,:index,:destroy]
   	resources:likes,only: [:create]
   end
+  get '/my_friends', to: 'users#myfriends'
 end

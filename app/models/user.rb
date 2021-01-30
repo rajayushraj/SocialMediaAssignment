@@ -15,4 +15,12 @@ class User < ApplicationRecord
   has_many :posts,dependent: :destroy
   has_many :likes,dependent: :destroy
   has_many :comments,dependent: :destroy
+
+  def full_name
+    "#{fname} #{lname}"
+  end
+
+  def all_friends
+    (friends+friendsrec).uniq
+  end
 end

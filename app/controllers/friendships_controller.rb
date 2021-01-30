@@ -19,7 +19,11 @@ class FriendshipsController < ApplicationController
 	end
 
 	def friendrequest
-	end
+  end
+  def search
+      @user=User.find_by(fname:params[:friend])
+      render 'users/search'
+  end
 
 	def accept
 		@send=User.find(params[:id])

@@ -5,5 +5,8 @@ class UsersController < ApplicationController
 	def show
 		@user=User.find(params[:id])
 		@friendsrequest=@user.friend_request
-	end
+  end
+  def search
+    
+  end
 end

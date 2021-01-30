@@ -1,0 +1,5 @@
+<% if @friends %>
+	<% @friends.each do |friend| %>
+		<p>Name:<%= friend.full_name %> email:<%= friend.email %> SendFriendRequest:<%= link_to 'Send',user_friendships_path(friend),method: :post  %></p>
+	<% end %>
+<% end %>

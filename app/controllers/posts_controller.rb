@@ -11,6 +11,7 @@ class PostsController < ApplicationController
 	end
 	def show
 		@post=Post.find(params[:id])
+		authorize! :read,@post
 	end
 	def create
 		@post = Post.new(post_params) 

@@ -61,8 +61,8 @@ class FriendshipsController < ApplicationController
 	def destroy
 		@send=User.find(params[:user_id])
 		@rec=User.find(params[:id])
-		@ff=Friendship.find_by(sender_id:@send,receiver_id:@rec,status:false)
+		@ff=Friendship.where(sender_id:@send,receiver_id:@rec,status:true).or(Friendship.where(sender_id:@rec,receiver_id:@send,status:true)).first
 		@ff.destroy
-		redirect_to @rec
+		redirect_to my_friends_path
 	end
 end
